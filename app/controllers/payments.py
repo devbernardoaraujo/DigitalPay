@@ -1,11 +1,7 @@
-# import flast module
+from app import app, config
 from flask import Flask, render_template
+
 import requests
-
-import config
-
-# instance of flask application
-app = Flask(__name__)
 
 @app.route("/")
 def hello():
@@ -21,6 +17,7 @@ def register():
 
 @app.route("/transactions", methods=["GET"])
 def transactions():
+    import ipdb;ipdb.set_trace()
     res = requests.get(
         "{}/v1/marketplaces/{}/sellers/{}/transactions".format(config.host,config.marketplace,config.seller),
         auth=(config.zpk,None),
@@ -48,7 +45,3 @@ def transfers():
     # offset = res.json()['total_pages']
 
     return render_template('transfers.html', transfers_list=transfers_list)
-
-
-if __name__ == '__main__':
-   app.run()
