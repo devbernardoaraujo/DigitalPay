@@ -17,7 +17,7 @@ def register():
 
 @app.route("/transactions", methods=["GET"])
 def transactions():
-    import ipdb;ipdb.set_trace()
+
     res = requests.get(
         "{}/v1/marketplaces/{}/sellers/{}/transactions".format(config.host,config.marketplace,config.seller),
         auth=(config.zpk,None),
