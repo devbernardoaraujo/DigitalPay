@@ -1,7 +1,10 @@
-from app import app, config
+from app import app, config, db
 from flask import Flask, render_template
 
 import requests
+
+from app.models.payments import Marketplaces
+
 
 @app.route("/")
 def hello():
@@ -17,10 +20,11 @@ def register():
 
 @app.route("/transactions", methods=["GET"])
 def transactions():
+    marketplace = Marketplaces.query.filter_by(external_id="c56526d5c795437aac54820edc297496").all()[0]
 
     res = requests.get(
-        "{}/v1/marketplaces/{}/sellers/{}/transactions".format(config.host,config.marketplace,config.seller),
-        auth=(config.zpk,None),
+        "{}/v1/marketplaces/{}/sellers/{}/transactions".format(config.host,marketplace.external_id,config.seller),
+        auth=(marketplace.private_key,None),
     )
 
     transactions_list = res.json()['items']
