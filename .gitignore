@@ -5,3 +5,4 @@ app/models/__pycache__/
 app/models/__pycache__/*
 app/controllers/__pycache__/*
 migrations/
+app/config_local.py
