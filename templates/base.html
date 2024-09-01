@@ -1,0 +1,24 @@
+<!--base.html-->
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="shortcut icon" type="image/png" href="/static/images/logos/favicon.png" />
+        <link rel="stylesheet" href="/static/css/styles.min.css" />
+  </head>
+  <body>
+      <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+          {% include 'sidebar.html' %}
+          <div class="content">
+              <div class="body-wrapper">
+                {% include 'header.html' %}
+                {% block content %}{% endblock %}
+              </div>
+          </div>
+      </div>
+      <footer>
+            <!-- the footer code will go in here -->
+      </footer>
+  </body>
+</html>

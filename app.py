@@ -1,0 +1,54 @@
+# import flast module
+from flask import Flask, render_template
+import requests
+
+import config
+
+# instance of flask application
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return render_template('index.html')
+
+@app.route("/login")
+def login():
+    return render_template('authentication-login.html')
+
+@app.route("/register")
+def register():
+    return render_template('authentication-register.html')
+
+@app.route("/transactions", methods=["GET"])
+def transactions():
+    res = requests.get(
+        "{}/v1/marketplaces/{}/sellers/{}/transactions".format(config.host,config.marketplace,config.seller),
+        auth=(config.zpk,None),
+    )
+
+    transactions_list = res.json()['items']
+    total_pages = res.json()['total_pages']
+
+    # page = res.json()['total_pages']
+    # offset = res.json()['total_pages']
+
+    return render_template('transactions.html', transactions_list=transactions_list, total_pages=total_pages)
+
+
+@app.route("/transfers", methods=["GET"])
+def transfers():
+    res = requests.get(
+        "{}/v1/marketplaces/{}/sellers/{}/transfers".format(config.host, config.marketplace, config.seller),
+        auth=(config.zpk, None),
+    )
+
+    transfers_list = res.json()['items']
+
+    # page = res.json()['total_pages']
+    # offset = res.json()['total_pages']
+
+    return render_template('transfers.html', transfers_list=transfers_list)
+
+
+if __name__ == '__main__':
+   app.run()
