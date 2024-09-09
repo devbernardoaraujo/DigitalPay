@@ -3,8 +3,8 @@ from flask import Flask, render_template
 
 import requests
 
-from app.models.payments import Marketplace
-from app.models.payments import User
+from app.models.payments import Marketplaces
+from app.models.payments import Users
 
 
 
@@ -23,7 +23,7 @@ def register():
 
 @app.route("/transactions", methods=["GET"])
 def transactions():
-    marketplace = Marketplace.query.filter_by(external_id="c56526d5c795437aac54820edc297496").all()[0]
+    marketplace = Marketplaces.query.filter_by(external_id="c56526d5c795437aac54820edc297496").all()[0]
 
     res = requests.get(
         "{}/v1/marketplaces/{}/sellers/{}/transactions".format(config.host,marketplace.external_id,config.seller),

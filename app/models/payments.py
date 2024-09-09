@@ -1,6 +1,6 @@
 from app import app, db, bcrypt
 
-class Marketplace(db.Model):
+class Marketplaces(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     public_key = db.Column(db.String(80), unique=True, nullable=False)
     private_key = db.Column(db.String(80), unique=True, nullable=False)
@@ -11,7 +11,7 @@ class Marketplace(db.Model):
     def __repr__(self):
         return '<Marketplace %r>' % self.name
 
-class User(db.Model):
+class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     password = db.Column(db.String(80), nullable=False)
