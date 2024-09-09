@@ -17,8 +17,8 @@ pip install virtualenv
 Em seguida, crie e ative o ambiente virtual:
 
 ```bash
-virtualenv venv
-source venv/bin/activate   
+virtualenv .venv
+source .venv/bin/activate   
 
 
 2. Instalação das Dependências
