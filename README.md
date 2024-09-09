@@ -11,14 +11,14 @@ Para garantir que todas as dependências sejam gerenciadas corretamente, utilize
 Primeiro, instale o `virtualenv` se ainda não estiver instalado:
 
 ```bash
-$ pip install virtualenv
+pip install virtualenv
 ```
 
 Em seguida, crie e ative o ambiente virtual:
 
 ```bash
-$ virtualenv .venv
-$ source .venv/bin/activate   
+virtualenv .venv
+source .venv/bin/activate   
 ```
 
 ### 2. Instalação das Dependências
