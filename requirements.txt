@@ -5,3 +5,5 @@ Flask-Migrate==4.0.7
 Flask-MySQL==1.5.2
 requests==2.31.0
 cryptography==43.0.1
+Flask-Bcrypt==1.0.1
+bcrypt==4.2.0
