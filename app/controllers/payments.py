@@ -3,7 +3,9 @@ from flask import Flask, render_template
 
 import requests
 
-from app.models.payments import Marketplaces
+from app.models.payments import Marketplace
+from app.models.payments import User
+
 
 
 @app.route("/")
@@ -14,13 +16,14 @@ def hello():
 def login():
     return render_template('authentication-login.html')
 
-@app.route("/register")
+@app.route("/register", methods=["GET", "POST"])
 def register():
+
     return render_template('authentication-register.html')
 
 @app.route("/transactions", methods=["GET"])
 def transactions():
-    marketplace = Marketplaces.query.filter_by(external_id="c56526d5c795437aac54820edc297496").all()[0]
+    marketplace = Marketplace.query.filter_by(external_id="c56526d5c795437aac54820edc297496").all()[0]
 
     res = requests.get(
         "{}/v1/marketplaces/{}/sellers/{}/transactions".format(config.host,marketplace.external_id,config.seller),
