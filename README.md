@@ -21,14 +21,14 @@ virtualenv .venv
 source .venv/bin/activate   
 
 
-2. Instalação das Dependências
+### 2. Instalação das Dependências
 
 Com o ambiente virtual ativado, instale as dependências do projeto com:
 
 ```bash
 pip install -r requirements.txt
 
-
+### 3. Banco de dados
 Agora, vamos criar um banco de dados e criar também o arquivo de conexão para o banco no MySQL!
 
 Crie um banco de dados no prompt mysql 'inovafinance' e configure-o do seu jeito.
