@@ -18,6 +18,8 @@ Em seguida, crie e ative o ambiente virtual:
 
 ```bash
 virtualenv .venv
+```
+```
 source .venv/bin/activate   
 ```
 
