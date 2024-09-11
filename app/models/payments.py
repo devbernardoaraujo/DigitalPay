@@ -16,7 +16,7 @@ class Users(db.Model):
     name = db.Column(db.String(100), nullable=False)
     password = db.Column(db.String(80), nullable=False)
     login = db.Column(db.String(80), unique=True, nullable=False)
-    marketplace_id = db.Column(db.Integer, db.ForeignKey('marketplace.id'))
+    marketplace_id = db.Column(db.Integer, db.ForeignKey('marketplaces.id'))
 
     def __init__(self, login, password, name):
         self.name = name
