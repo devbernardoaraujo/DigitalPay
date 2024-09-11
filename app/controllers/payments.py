@@ -18,8 +18,7 @@ def login():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-
-    return render_template('authentication-register.html')
+    return render_template('theme/authentication-register.html')
 
 @app.route("/transactions", methods=["GET"])
 def transactions():
