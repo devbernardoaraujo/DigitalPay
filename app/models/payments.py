@@ -14,13 +14,13 @@ class Marketplaces(db.Model):
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
-    password = db.Column(db.String(80), nullable=False)
-    login = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(128), nullable=False)
+    email = db.Column(db.String(80), unique=True, nullable=False)
     marketplace_id = db.Column(db.Integer, db.ForeignKey('marketplaces.id'))
 
-    def __init__(self, login, password, name):
+    def __init__(self, email, password, name):
         self.name = name
-        self.login = login
+        self.email = email
         self.password = bcrypt.generate_password_hash(password).decode('utf-8')
 
     def check_password(self, password):

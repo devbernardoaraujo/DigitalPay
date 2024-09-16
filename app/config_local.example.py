@@ -1,1 +1,0 @@
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://USERNAME:PASSWORD@HOST/inovafinance'
