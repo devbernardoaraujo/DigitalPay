@@ -7,9 +7,26 @@ from app.models.payments import Marketplaces, Users
 def hello():
     return render_template('index.html')
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template('authentication-login.html')
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        if not email or not password:
+            flash("Todos os campos são obrigatórios!", "danger")
+            return redirect(url_for('login'))
+        
+        user = Users.query.filter_by(email=email).first()
+        if user and user.check_password(password):
+            flash("Login realizado com sucesso!", "success")
+            #session of user 
+            return redirect(url_for('transactions'))
+        else:
+            flash("Email ou senha inválidos, tente novamente.", "danger")
+            return redirect(url_for('login'))
+
+    return render_template('theme/authentication-login.html')
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -32,7 +49,7 @@ def register():
         db.session.commit()
 
         flash("Usuário registrado com sucesso!", "success")
-        return redirect(url_for('/login'))
+        return redirect(url_for('login'))
 
     return render_template('theme/authentication-register.html')
 
