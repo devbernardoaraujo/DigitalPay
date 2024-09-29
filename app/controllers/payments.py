@@ -26,7 +26,7 @@ def login():
             flash("Email ou senha inválidos, tente novamente.", "danger")
             return redirect(url_for('login'))
 
-    return render_template('theme/authentication-login.html')
+    return render_template('authentication-login.html')
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -51,7 +51,7 @@ def register():
         flash("Usuário registrado com sucesso!", "success")
         return redirect(url_for('login'))
 
-    return render_template('theme/authentication-register.html')
+    return render_template('authentication-register.html')
 
 @app.route("/transactions", methods=["GET"])
 def transactions():
