@@ -20,21 +20,21 @@
           <div class="col-md-8 col-lg-6 col-xxl-3">
             <div class="card mb-0">
               <div class="card-body">
-                {% with messages = get_flashed_messages() %}
+                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                  <img src="static/images/logos/dark-logo.svg" width="180" alt="">
+                </a>
+                <p class="text-center">Your Social Campaigns</p>
+                {% with messages = get_flashed_messages(with_categories=true) %}
                   {% if messages %}
-                    {% for message in messages %}
+                    {% for category, message in messages %}
                       <div class="card-body p-4">
-                        <div class="alert alert-primary" role="alert">
+                        <div class="alert alert-{{category}}" role="alert">
                          {{ message }}
                         </div>
                       </div>
                     {% endfor %}
                   {% endif %}
                 {% endwith %}
-                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                  <img src="static/images/logos/dark-logo.svg" width="180" alt="">
-                </a>
-                <p class="text-center">Your Social Campaigns</p>
                 <form method="POST" action="/register">
                   <div class="mb-3">
                     <label for="exampleInputtext1" class="form-label">Name</label>
