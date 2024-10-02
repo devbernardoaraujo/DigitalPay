@@ -51,3 +51,8 @@ def register():
         return redirect(url_for('login'))
 
     return render_template('authentication-register.html')
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return render_template('authentication-login.html')
