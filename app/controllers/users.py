@@ -4,6 +4,11 @@ from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user
 from app.models.users import Users
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('theme/error404.html', error=error)
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
