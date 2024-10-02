@@ -21,4 +21,8 @@ def role_required(role):
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('error404.html', error=error)
+    return render_template('error404.html', error=error), 404
+
+@app.errorhandler(401)
+def page_not_found(error):
+    return render_template('error401.html', error=error), 401
