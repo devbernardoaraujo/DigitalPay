@@ -17,7 +17,7 @@ bcrypt = Bcrypt(app)
 # migrations
 migrate = Migrate(app, db)
 
-from app.controllers import payments, users, decorators
+from app.controllers import payments, users, tools
 from app.models import payments, users
 
 # instance of flask login
