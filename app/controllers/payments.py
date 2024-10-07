@@ -23,6 +23,7 @@ def transactions():
     return render_template('transactions.html', transactions_list=transactions_list, total_pages=total_pages)
 
 @app.route("/transfers", methods=["GET"])
+@login_required
 def transfers():
     marketplace = Marketplaces.query.filter_by(external_id="c56526d5c795437aac54820edc297496").first()
     if not marketplace:
