@@ -1,7 +1,7 @@
 import requests
 from app import app, db
 from flask import render_template, request, redirect, url_for, flash
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, current_user
 from app.models.users import Users
 
 @app.route("/", methods=["GET"])
@@ -10,6 +10,11 @@ def index():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    if current_user.is_authenticated:
+                # Se o usuário está logado, redireciona para /transactions
+                return redirect(url_for('transactions'))
+    
+
     if request.method == "POST":
         email = request.form.get("email")
         password = request.form.get("password")
