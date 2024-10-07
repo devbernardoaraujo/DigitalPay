@@ -4,6 +4,10 @@ from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user
 from app.models.users import Users
 
+@app.route("/", methods=["GET"])
+def index():
+    return redirect(url_for('login'))
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":

@@ -10,7 +10,7 @@ def transactions():
     marketplace = Marketplaces.query.filter_by(external_id="c56526d5c795437aac54820edc297496").first()
     if not marketplace:
         flash("Marketplace não encontrado.", "danger")
-        return redirect(url_for('hello'))
+        return redirect(url_for('logout'))
 
     res = requests.get(
         "{}/v1/marketplaces/{}/sellers/{}/transactions".format(config.host, marketplace.external_id, config.seller),
@@ -27,7 +27,7 @@ def transfers():
     marketplace = Marketplaces.query.filter_by(external_id="c56526d5c795437aac54820edc297496").first()
     if not marketplace:
         flash("Marketplace não encontrado.", "danger")
-        return redirect(url_for('hello'))
+        return redirect(url_for('logout'))
 
     res = requests.get(
         "{}/v1/marketplaces/{}/sellers/{}/transfers".format(config.host, marketplace.external_id, config.seller),
