@@ -11,8 +11,8 @@ def index():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
-                # Se o usuário está logado, redireciona para /transactions
-                return redirect(url_for('transactions'))
+        # Se o usuário está logado, redireciona para /transactions
+        return redirect(url_for('transactions'))
     
 
     if request.method == "POST":
