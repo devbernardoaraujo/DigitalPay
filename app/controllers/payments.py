@@ -22,7 +22,7 @@ def transactions():
 
     transactions_list = res.json().get('items', [])
     total_pages = res.json().get('total_pages', 0)
-    import ipdb;ipdb.set_trace()
+
     return render_template('transactions.html', transactions_list=transactions_list, total_pages=total_pages)
 
 @app.route("/transactions/details", methods=["POST"])
