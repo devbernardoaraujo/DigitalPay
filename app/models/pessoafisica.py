@@ -1,4 +1,5 @@
 from app import db
+from sqlalchemy import Column, Integer, String, Date, Float
 
 class PessoaFisica(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
