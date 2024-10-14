@@ -3,6 +3,7 @@ from app import app, config
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_required, current_user
 from app.models.payments import Marketplaces
+from app.models.pessoafisica import PessoaFisica
 
 @app.route("/transactions", methods=["GET"])
 @login_required
