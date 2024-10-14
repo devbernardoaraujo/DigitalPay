@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Pessoa Física</title>
+  <link rel="shortcut icon" type="image/png" href="static/images/logos/favicon.png" />
+  <link rel="stylesheet" href="static/css/styles.min.css" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <div
+      class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+      <div class="d-flex align-items-center justify-content-center w-100">
+        <div class="row justify-content-center w-100">
+          <div class="col-md-8 col-lg-6 col-xxl-3">
+            <div class="card mb-0">
+              <div class="card-body">
+                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                  <img src="static/images/logos/dark-logo.svg" width="180" alt="">
+                </a>
+                <p class="text-center">Cadastro de Pessoa Física</p>
+                <form method="POST" action="/pessoafisica">
+                  <div class="mb-3">
+                    <label for="first_name" class="form-label">Primeiro Nome</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="last_name" class="form-label">Último Nome</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone_number" class="form-label">Número de Telefone</label>
+                    <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="taxpayer_id" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="taxpayer_id" name="taxpayer_id" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="birthdate" class="form-label">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="statement_descriptor" class="form-label">Nome na Fatura</label>
+                    <input type="text" class="form-control" id="statement_descriptor" name="statement_descriptor">
+                  </div>
+                  <div class="mb-3">
+                    <label for="revenue" class="form-label">Renda/Faturamento</label>
+                    <input type="number" class="form-control" id="revenue" name="revenue" required>
+                  </div>
+                  <h5>Endereço</h5>
+                  <div class="mb-3">
+                    <label for="line1" class="form-label">Rua</label>
+                    <input type="text" class="form-control" id="line1" name="line1" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="line2" class="form-label">Número</label>
+                    <input type="text" class="form-control" id="line2" name="line2" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="line3" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="line3" name="line3">
+                  </div>
+                  <div class="mb-3">
+                    <label for="neighborhood" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="neighborhood" name="neighborhood" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="city" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="city" name="city" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="state" class="form-label">Estado</label>
+                    <input type="text" class="form-control" id="state" name="state" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="postal_code" class="form-label">CEP</label>
+                    <input type="text" class="form-control" id="postal_code" name="postal_code" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="country_code" class="form-label">Código do País</label>
+                    <input type="text" class="form-control" id="country_code" name="country_code" value="BR" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="mcc" class="form-label">Código de Atividade do Negócio (MCC)</label>
+                    <input type="text" class="form-control" id="mcc" name="mcc" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Cadastrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="static/libs/jquery/dist/jquery.min.js"></script>
+  <script src="static/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
