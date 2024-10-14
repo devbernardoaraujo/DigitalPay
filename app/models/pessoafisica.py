@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, Float
-from sqlalchemy.ext.declarative import declarative_base
+from app import db
 
 Base = declarative_base()
 
