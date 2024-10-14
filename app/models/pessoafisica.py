@@ -1,10 +1,6 @@
 from app import db
 
-Base = declarative_base()
-
-class PessoaFisica(Base):
-    __tablename__ = 'pessoa_fisica'  # Nome da tabela no banco de dados
-
+class PessoaFisica(db.model):
     id = Column(Integer, primary_key=True, autoincrement=True)
     first_name = Column(String(50), nullable=False)
     last_name = Column(String(50), nullable=False)
@@ -22,7 +18,7 @@ class PessoaFisica(Base):
     state = Column(String(2), nullable=False)  # UF do user
     postal_code = Column(String(10), nullable=False)  # CEP do user!
     country_code = Column(String(2), default='BR', nullable=False)  # Código do país
-    mcc = Column(String(10), nullable=False)  # não entendi mt bem oq é mcc, apenas segui a doc lkkkkkkk
+    mcc = Column(String(10), nullable=False)  # não entendi mt bem oq é mcc, apenas segui a doc
 
     def __repr__(self):
         return f"<PessoaFisica(id={self.id}, first_name='{self.first_name}', last_name='{self.last_name}')>"
