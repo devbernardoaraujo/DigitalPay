@@ -1,6 +1,6 @@
 from app import db
 
-class PessoaFisica(db.model):
+class PessoaFisica(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
     first_name = Column(String(50), nullable=False)
     last_name = Column(String(50), nullable=False)
