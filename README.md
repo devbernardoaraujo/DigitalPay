@@ -1,6 +1,6 @@
 # Digital Pay
 
-Bem-vindo ao projeto **Inova Finance**! Este guia irá ajudá-lo a configurar e iniciar o ambiente para o desenvolvimento do projeto.
+Bem-vindo ao projeto **Digital Pay**! Este guia irá ajudá-lo a configurar e iniciar o ambiente para o desenvolvimento do projeto.
 
 ## Configuração do Ambiente
 
