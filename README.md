@@ -1,4 +1,4 @@
-# Inova Finance
+# Digital Pay
 
 Bem-vindo ao projeto **Inova Finance**! Este guia irá ajudá-lo a configurar e iniciar o ambiente para o desenvolvimento do projeto.
 
